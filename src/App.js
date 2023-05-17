@@ -1,6 +1,9 @@
 import './App.css';
+import Main from './Main/Main';
+import Menu from './Menu/Menu';
 
 function App() {
+  const menuPage = window.location.pathname === '/menu';
   return (
     <div className="App">
       <nav>
@@ -8,10 +11,9 @@ function App() {
         <a href="/menu">menu</a>
       </nav>
       <header className="App-header">HANWOO VILLAGE</header>
-      <div>
-        Welcome to our restaurant please enjoy our
-        <a href="/menu">menu</a>
-      </div>
+      {
+        menuPage ? <Menu /> : <Main />
+      }
     </div>
   );
 }
